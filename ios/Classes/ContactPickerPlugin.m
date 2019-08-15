@@ -48,6 +48,7 @@
                                                        style:CNContactFormatterStyleFullName];
   NSDictionary *phoneNumber = [NSDictionary
       dictionaryWithObjectsAndKeys:[contactProperty.value stringValue], @"number",
+      [contactProperty.value stringValue], @"time",
                                    [CNLabeledValue localizedStringForLabel:contactProperty.label],
                                    @"label", nil];
   _result([NSDictionary
