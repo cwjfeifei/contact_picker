@@ -41,24 +41,23 @@ class Contact {
 
   /// The phone number of the contact.
   final PhoneNumber phoneNumber;
-
   @override
   String toString() => '$fullName: $phoneNumber';
 }
 
 /// Represents a phone number selected by the user.
 class PhoneNumber {
-  PhoneNumber({this.number, this.label});
+  PhoneNumber({this.number, this.label, this.time=""});
 
   factory PhoneNumber.fromMap(Map<dynamic, dynamic> map) =>
-      new PhoneNumber(number: map['number'], label: map['label']);
+      new PhoneNumber(number: map['number'], label: map['label'], time: map['time']);
 
   /// The formatted phone number, e.g. "+1 (555) 555-5555"
   final String number;
 
   /// The label associated with the phone number, e.g. "home" or "work".
   final String label;
-
+  final String time;
   @override
   String toString() => '$number ($label)';
 }

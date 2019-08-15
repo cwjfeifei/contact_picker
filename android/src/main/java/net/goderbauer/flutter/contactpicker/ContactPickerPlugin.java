@@ -73,11 +73,11 @@ public class ContactPickerPlugin implements MethodCallHandler, PluginRegistry.Ac
     String label = (String) ContactsContract.CommonDataKinds.Email.getTypeLabel(activity.getResources(), phoneType, customLabel);
     String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
     String fullName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-
+    String time = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_LAST_UPDATED_TIMESTAMP));
     HashMap<String, Object> phoneNumber = new HashMap<>();
     phoneNumber.put("number", number);
     phoneNumber.put("label", label);
-
+    phoneNumber.put("time", time);
     HashMap<String, Object> contact = new HashMap<>();
     contact.put("fullName", fullName);
     contact.put("phoneNumber", phoneNumber);
